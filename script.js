@@ -1,12 +1,14 @@
+// Using Bitsy v4.9 (last version before onkeydown function was changed to store movement variables - causing desync of movement)
+// https://github.com/le-doux/bitsy/commit/25949c0433fa55ac72c563b9941ca74e1a93cffa
+
 // TODO:
 // - store frame elements in an array
-// - fix syncing
 // - make iframes not individually interactable
 
-var cellWidth = 256;
-var cellHeight = 256;
-var columnCount = 3;
-var rowCount = 3;
+var cellWidth = 128;
+var cellHeight = 128;
+var columnCount = 7;
+var rowCount = 4;
 
 window.onload = setupGrid;
 window.onresize = resizeGrid;
@@ -47,7 +49,7 @@ function setupGrid()
             var cell = document.createElement("iframe");
 
             cell.id = frameId.toString();
-            cell.src = frameId.toString() + ".html";
+            cell.src = "1.html";//frameId.toString() + ".html";
             document.body.appendChild(cell);
         }
     }  
@@ -55,6 +57,8 @@ function setupGrid()
     addEventListener("keydown", onkeydown);
     addEventListener("keyup", onkeyup);
 
+
+    // wait here for loading to finish. resize frame function?
     resizeGrid();
 }
 
@@ -75,6 +79,8 @@ function resizeGrid()
             var left = x * cellWidth + (window.innerWidth - bodyWidth) / 2;
             var top = y * cellHeight + (window.innerHeight - bodyHeight) / 2;
 
+            frame.style.width = cellWidth.toString() + "px";
+            frame.style.height = cellHeight.toString() + "px";
             frame.style.left = left.toString() + "px";
             frame.style.top = top.toString() + "px";
         }
