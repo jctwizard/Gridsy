@@ -6,13 +6,18 @@ TODO
 STRETCH
 
 BUGS
-- input sometimes continues after releasing key (only seems to happen if switch tab/minimise while holding a key)
-- desyncing on exits and dialogue (?)
+Input sometimes continues after releasing key (only seems to happen if switch tab/minimise while holding a key). 
+This issue is still in new Bitsy when bitsy games are put into Gridsy, which means it's a problem with the iframes not receiving the unfocus event
+    - solution may be here: https://github.com/le-doux/bitsy/commit/ae9009d76fe84f34c66a8262c6d03c5d170e7831
+
+Desyncing on exits and dialogue (?)
+
 
 
 TESTS
 basic.html: Using Bitsy v4.9 (last version before onkeydown function was changed to store movement variables - causing desync of movement)
 https://github.com/le-doux/bitsy/commit/25949c0433fa55ac72c563b9941ca74e1a93cffa
+https://github.com/le-doux/bitsy/commits/main/?before=f43e90458c52deec10e74a7ed95c778a4eeb0acd+1231 
 
 loopTest.html: If we use exits all around the edge to make a looping room, the avatar 'hops' over the edge so it doesn't appear seamless. 
 Some solutions would be:
@@ -21,4 +26,3 @@ Some solutions would be:
 3. do not make a gridsy that relies on seamless edge-looping
 
 
- 
