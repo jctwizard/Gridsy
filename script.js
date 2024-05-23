@@ -1,10 +1,3 @@
-// Using Bitsy v4.9 (last version before onkeydown function was changed to store movement variables - causing desync of movement)
-// https://github.com/le-doux/bitsy/commit/25949c0433fa55ac72c563b9941ca74e1a93cffa
-
-// TODO:
-// - store frame elements in an array
-// - make iframes not individually interactable
-
 var cellWidth = 128 * 2;
 var cellHeight = 128 * 2;
 var columnCount = 7;
@@ -66,6 +59,7 @@ function setupGrid()
         }
     }  
     
+    console.log("here");
     addEventListener("keydown", onkeydown);
     addEventListener("keyup", onkeyup);
 }

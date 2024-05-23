@@ -1,0 +1,24 @@
+
+TODO
+- hotel with each room a different game
+- narrative connecting different rooms
+
+STRETCH
+
+BUGS
+- input sometimes continues after releasing key (only seems to happen if switch tab/minimise while holding a key)
+- desyncing on exits and dialogue (?)
+
+
+TESTS
+basic.html: Using Bitsy v4.9 (last version before onkeydown function was changed to store movement variables - causing desync of movement)
+https://github.com/le-doux/bitsy/commit/25949c0433fa55ac72c563b9941ca74e1a93cffa
+
+loopTest.html: If we use exits all around the edge to make a looping room, the avatar 'hops' over the edge so it doesn't appear seamless. 
+Some solutions would be:
+1. use a tile for the edge that makes sense narratively
+2. do not render the edge in the webpage
+3. do not make a gridsy that relies on seamless edge-looping
+
+
+ 
