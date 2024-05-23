@@ -1,7 +1,7 @@
 var cellWidth = 128 * 2;
 var cellHeight = 128 * 2;
-var columnCount = 7;
-var rowCount = 4;
+var columnCount = 2;
+var rowCount = 1;
 var cellArray = [];
 var cellsLoaded = 0;
 
